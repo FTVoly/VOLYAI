@@ -1,0 +1,368 @@
+:root { --primary: #4F46E5; --text-main: #111827; --text-light: #6B7280; --bg-gray: #F9FAFB; --gradient: linear-gradient(135deg, #4F46E5 0%, #9333EA 100%); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: var(--text-main); line-height: 1.6; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+.navbar { padding: 20px 0; border-bottom: 1px solid #f3f4f6; position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 100;}
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
+.dot { color: var(--primary); }
+.nav-links { list-style: none; display: flex; gap: 30px; }
+.nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; }
+.btn-primary { background: var(--text-main); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.2s; }
+.btn-primary:hover { background: var(--primary); transform: translateY(-2px); }
+.btn-primary.small { padding: 8px 16px; font-size: 0.9rem; }
+.btn-secondary { background: white; color: var(--text-main); border: 1px solid #e5e7eb; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.2s; }
+.btn-secondary:hover { border-color: var(--text-main); }
+.hero { padding: 100px 0 80px; text-align: center; background: radial-gradient(circle at 50% 0%, #f5f3ff 0%, #ffffff 70%); }
+.badge-new { background: #EEF2FF; color: var(--primary); padding: 6px 12px; border-radius: 99px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; display: inline-block; }
+.hero h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; }
+.gradient-text { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-subtitle { font-size: 1.25rem; color: var(--text-light); max-width: 700px; margin: 0 auto 40px; }
+.hero-buttons { display: flex; gap: 15px; justify-content: center; margin-bottom: 30px; }
+.trust-text { font-size: 0.9rem; color: var(--text-light); font-weight: 500; }
+.stats-bar { background: var(--text-main); padding: 40px 0; color: white; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
+.stat-number { display: block; font-size: 2.5rem; font-weight: 700; color: #A78BFA; }
+.section-white { padding: 100px 0; }
+.section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 60px; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.feature-card { padding: 30px; border-radius: 16px; background: white; border: 1px solid #f3f4f6; transition: 0.3s; }
+.feature-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+.icon-box { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+.purple { background: #EEF2FF; } .blue { background: #E0F2FE; } .orange { background: #FFEDD5; }
+footer { padding: 80px 0 30px; border-top: 1px solid #e5e7eb; }
+.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+.footer-col a { display: block; text-decoration: none; color: var(--text-main); margin-bottom: 12px; }
+.footer-bottom { text-align: center; color: var(--text-light); font-size: 0.9rem; border-top: 1px solid #f3f4f6; padding-top: 20px; }
+@media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .nav-links { display: none; } .hero-buttons { flex-direction: column; } .stats-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; text-align: center; } }
+
+
+/* =========================================
+   SECTION TARIFS / DEVIS (Style Tolk.ai)
+   ========================================= */
+
+/* 1. Le Fond Général de la page (Dégradé subtil violet/rose) */
+.tarifs-section {
+    background: radial-gradient(circle at 10% 20%, rgb(248, 245, 255) 0%, rgb(255, 255, 255) 90%);
+    padding: 80px 0;
+    min-height: 85vh; /* Prend presque toute la hauteur */
+    display: flex;
+    align-items: center;
+}
+
+/* 2. La Grille (Pour mettre le texte à gauche et le formulaire à droite) */
+.tarifs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50% / 50% */
+    gap: 80px; /* Espace entre les deux */
+    align-items: flex-start; /* Aligne en haut */
+}
+
+/* 3. Colonne de Gauche (Texte) */
+.tarifs-content {
+    padding-top: 20px;
+}
+.tarifs-content h1 {
+    font-size: 3rem; /* Gros titre */
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+.tarifs-content p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* 4. Colonne de Droite (La Carte Blanche du Formulaire) */
+.tarifs-form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px; /* Coins bien arrondis */
+    box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.08); /* Ombre douce et large */
+    border: 1px solid #f3f4f6;
+}
+
+/* 5. Les Champs du Formulaire */
+.tarifs-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espace vertical entre chaque champ */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espace entre label et input */
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+.required { color: #db2777; /* Rose/Rouge pour l'astérisque */ }
+
+/* Style des champs de saisie (Inputs) */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 12px 0; /* Pas de padding sur les côtés, style "souligné" */
+    border: none;
+    border-bottom: 1px solid #e5e7eb; /* Juste une ligne en bas */
+    border-radius: 0; /* Pas d'arrondi */
+    font-size: 1rem;
+    color: var(--text-main);
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s;
+}
+
+/* Quand on clique dans le champ */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-bottom-color: var(--primary); /* La ligne devient violette */
+}
+
+/* Style spécifique pour le select */
+.form-group select {
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+/* 6. Les Checkboxes (Cases à cocher) */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+.checkbox-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.checkbox-label input {
+    accent-color: var(--primary); /* Couleur de la case cochée */
+    transform: scale(1.1);
+}
+
+/* 7. Le Bouton "Obtenir mon estimation" */
+.form-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #2e1065; /* Violet très foncé comme sur l'image */
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.form-btn:hover {
+    background-color: var(--primary);
+}
+
+/* --- RESPONSIVE (Pour Mobile) --- */
+@media (max-width: 900px) {
+    .tarifs-grid {
+        grid-template-columns: 1fr; /* Une seule colonne */
+        gap: 40px;
+    }
+    .tarifs-content {
+        text-align: center;
+    }
+    .tarifs-content h1 {
+        font-size: 2.2rem;
+    }
+    .tarifs-form-container {
+        padding: 25px;
+    }
+}
+
+/* =========================================
+   NOUVEAU CSS POUR PAGES SOLUTIONS & INDUSTRIES
+   ========================================= */
+
+/* --- Header Commun --- */
+.page-header {
+    padding: 100px 0 60px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, #f5f3ff 0%, #ffffff 60%);
+}
+.header-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+/* --- Layout Zig-Zag (Solutions) --- */
+.solution-block { padding: 80px 0; }
+.bg-gray { background-color: #F9FAFB; }
+
+.solution-grid {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.solution-grid.reverse { flex-direction: row-reverse; } /* Inverse l'ordre */
+
+.solution-text { flex: 1; }
+.solution-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+.solution-visual { flex: 1; display: flex; justify-content: center; }
+
+/* Cartes Visuelles (Fausses interfaces) */
+.visual-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Interface Callbot */
+.call-interface {
+    text-align: center;
+    padding: 20px;
+}
+.call-avatar {
+    width: 80px; height: 80px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 0 10px rgba(79, 70, 229, 0.2);
+    animation: pulse 2s infinite;
+}
+.waveform { letter-spacing: 3px; color: var(--text-light); font-weight: bold; margin-top: 10px; }
+
+/* Grille d'icônes (Integrations) */
+.integrations {
+    flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 20px;
+}
+.app-icon {
+    font-size: 2.5rem;
+    width: 80px; height: 80px;
+    background: #f3f4f6;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 16px;
+    color: #4b5563;
+}
+
+/* --- Grille Industries --- */
+.industries-grid-large {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.industry-card-detail {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 40px;
+    transition: 0.3s;
+}
+.industry-card-detail:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.card-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+    background: #EEF2FF;
+    width: 50px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 10px;
+}
+.industry-card-detail h3 { font-size: 1.4rem; margin: 0; }
+.card-features {
+    list-style: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f3f4f6;
+}
+.card-features li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    display: flex; align-items: center; gap: 10px;
+}
+.card-features li i { color: var(--primary); font-size: 0.8rem; }
+
+/* CTA Section Bas de page */
+.cta-section {
+    padding: 80px 0;
+    text-align: center;
+    background: #111827; /* Fond sombre */
+    color: white;
+}
+.cta-section h2 { margin-bottom: 30px; color: white; }
+
+/* Animation Pulse */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(79, 70, 229, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Responsive Mobile */
+@media (max-width: 900px) {
+    .solution-grid, .solution-grid.reverse {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    .solution-text h2 { font-size: 1.8rem; }
+    .check-list { text-align: left; display: inline-block; }
+    .visual-card { margin: 0 auto; }
+}
+
+/* --- STYLE PAGES TEXTE (Mentions Légales) --- */
+.text-page {
+    max-width: 800px; /* Limite la largeur pour la lecture */
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.last-update {
+    color: var(--text-light);
+    margin-bottom: 50px;
+    font-style: italic;
+}
+.legal-block {
+    margin-bottom: 40px;
+}
+.legal-block h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+.legal-block p {
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.8;
+}
